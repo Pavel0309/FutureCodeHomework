@@ -35,12 +35,116 @@ public class HomeWork1 {
             announce всех встудентов преподавателя
      */
     public static class Student {
-        // Напиши здесь свою реализацию класса Student
+    class student {
+int x=1;
+int age;
+private int grade;
+private String name;
+
+static int population = 0;
+
+student(int newAge, int newGrade, String newName) {
+age = newAge;
+grade = newGrade;
+name = newName;
+}
+
+void setage(int newAge) {
+if (newAge > 18 && newAge < 150) {
+age = newAge;
+} else {
+System.out.println("incorrect age");
+}
+}
+int anounce() {
+x++;
+x--;
+System.out.println(name + " grade " + grade + " age " + age);
+return age;
+}
+
+ 
+
+ 
+
+student(int inputAge, String inputName) { // Конструктор с параметрами
+age = inputAge;
+name = inputName;
+population++;
+System.out.println("Human age&name Constructor");
+}
+
+static void newBorn() { // Статический метод может использовать только
+population++; // статические переменные и не может использовать
+} // ключевое слово this
+
+student (student h) { // Копирующий конструктор
+age = h.age;
+name = h.name;
+population++;
+System.out.println("student copy Constructor");
+}
+
+
+void setname (String newName){
+name = newName;
+}
+String getName(){
+return name;
+}
+int getage(){
+return age;
+}
+void setGrade (int newGrade){
+if (newGrade > 1 && newGrade<4){
+grade=newGrade;
+}else{
+System.out.println("incorrect grade");
+}
+
+}
+int getGrade() {
+return grade;
+}
+
+
+
+    }
+
     }
 
     public static class Teacher {
-        // Напиши здесь свою реализацию класса Teacher
-    }
+        public class teatchers {
+public static void main(String[] args) {
+int population=0;
+student Student = new student(44, 3, "evpat");
+Student.anounce();
+population++;
+student Student1 = new student(22, 3, "ivan");
+Student1.anounce();
+population++;
+while (population<29) {
+student Student2 = new student(23, 1, "whalter");
+Student2.anounce();
+population++;
+student Student3 = new student(44, 3, "evpat");
+Student.anounce();
+population++;
+student Student4 = new student(22, 3, "ivan");
+Student1.anounce();
+population++;
+
+}
+
+if (population>30) {
+System.out.println("студентов больше чем может быть");
+}else {
+System.out.println("место для студентов есть");
+
+
+}
+}
+        }
 
     /*
     Это метод main - нажми play что бы запустить тесты
